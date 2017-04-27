@@ -9,7 +9,7 @@
 import Foundation
 typealias Currency = String
 
-struct Bill {
+struct Bill: Money {
     
     let _amount: Int
     let _currency: Currency
