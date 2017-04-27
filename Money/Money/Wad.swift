@@ -27,7 +27,10 @@ extension Wad : Money{
     }
     
     func times(_ n:Int)->Wad{
-        return self
+        let total = _bills.map{
+            $0.times(n)
+        }
+        return Wad(_bills: total)
     }
     
     func plus(_ addend: Wad)-> Wad{
