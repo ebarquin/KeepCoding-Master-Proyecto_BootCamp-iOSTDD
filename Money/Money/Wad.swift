@@ -31,7 +31,7 @@ extension Wad : Money{
     }
     
     func plus(_ addend: Wad)-> Wad{
-        return self
+        return Wad(_bills: _bills + addend._bills)
     }
     
     func reduced(to: Currency, broker: Rater) throws -> Bill{
@@ -55,5 +55,24 @@ extension Wad: Equatable {
         
         return leftBill == rightBil
         
+    }
+}
+
+extension Wad: CustomStringConvertible {
+    
+    public var description: String {
+        get {
+            if billCount == 0 {
+                return "Empty"
+            } else if billCount == 1 {
+                return (_bills.first?.description)!
+            }else {
+                var total = ""
+                for bill in _bills {
+                    total = total + " + \(bill)"
+                }
+                return total
+            }
+        }
     }
 }
