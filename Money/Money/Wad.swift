@@ -37,6 +37,14 @@ extension Wad : Money{
         return Wad(_bills: _bills + addend._bills)
     }
     
+    func plus(_ addend: Bill)-> Wad{
+        var bills = _bills
+        bills.append(addend)
+        
+        return Wad(_bills: bills)
+    }
+
+    
     func reduced(to: Currency, broker: Rater) throws -> Bill{
         var tally = Bill(amount: 0, currency: to)
         for each in _bills {

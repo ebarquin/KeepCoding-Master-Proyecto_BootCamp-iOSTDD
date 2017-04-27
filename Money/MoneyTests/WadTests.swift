@@ -64,6 +64,29 @@ class WadTests: XCTestCase {
         let eightyFour = singleBillWad.times(2)
         XCTAssertEqual(eightyFour, Wad(amount: 84, currency: "USD"))
     }
+    
+    func testSimpleCrossAddition(){
+        
+        var broker = Broker()
+        broker.addRate(from: "EUR", to: "USD", rate: 2)
+        
+        let sum = Wad()
+            .plus(Bill(amount: 10, currency: "USD"))
+            .plus(Bill(amount: 5, currency: "EUR"))
+        
+        
+        XCTAssertEqual(sum.billCount, 2)
+        XCTAssertEqual(sum._bills,
+                       [Bill(amount: 10, currency: "USD"),
+                        Bill(amount: 5, currency: "EUR")] )
+        
+        XCTAssertNotEqual(sum._bills,
+                          [Bill(amount: 4, currency: "USD"),
+                           Bill(amount: 15, currency: "EUR")] )
+        
+        XCTAssertNotEqual(sum.billCount, 1)
+    }
+
 
     
 
