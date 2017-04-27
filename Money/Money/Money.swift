@@ -47,3 +47,11 @@ extension Money: Hashable {
         }
     }
 }
+
+extension Money{
+    
+    func reduced(to: Currency, broker: Broker) throws ->Money{
+        let rate = try! broker.rate(from: _currency, to: to)
+        return Money(amount: _amount * rate , currency: to)
+    }
+}

@@ -14,10 +14,14 @@ class MoneyTests: XCTestCase {
     let five = Money(amount: 5)
     let otherFive = Money(amount: 5)
     let ten = Money(amount: 10)
+    var broker : Broker!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        broker = Broker()
+        broker.addRate(from: "EUR", to: "USD", rate: 2)
     }
     
     override func tearDown() {
@@ -49,6 +53,10 @@ class MoneyTests: XCTestCase {
     
     func testSimpeAddition(){
         XCTAssertEqual(ten, five.plus(otherFive))
+    }
+    
+    func testSimpleReduction() {
+        XCTAssertEqual(try! five.reduced(to: "EUR", broker: broker), five)
     }
     
 }
