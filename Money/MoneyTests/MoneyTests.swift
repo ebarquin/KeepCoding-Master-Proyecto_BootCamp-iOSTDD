@@ -11,9 +11,9 @@ import XCTest
 
 class MoneyTests: XCTestCase {
     
-    let five = Money(amount: 5)
-    let otherFive = Money(amount: 5)
-    let ten = Money(amount: 10)
+    let five = Bill(amount: 5)
+    let otherFive = Bill(amount: 5)
+    let ten = Bill(amount: 10)
     var broker : Broker!
     
     override func setUp() {

@@ -1,5 +1,5 @@
 //
-//  Currency.swift
+//  Bill.swift
 //  Money
 //
 //  Created by Eugenio Barquín on 27/4/17.
@@ -9,7 +9,7 @@
 import Foundation
 typealias Currency = String
 
-struct Money {
+struct Bill {
     
     let _amount: Int
     let _currency: Currency
@@ -24,23 +24,23 @@ struct Money {
         _currency = "EUR"
     }
     
-    public func times(_ n:Int) -> Money {
-        return Money(amount: _amount * n)
+    public func times(_ n:Int) -> Bill {
+        return Bill(amount: _amount * n)
     }
     
-    public func plus(_ added: Money) -> Money {
-        return Money(amount: _amount + added._amount)
+    public func plus(_ added: Bill) -> Bill {
+        return Bill(amount: _amount + added._amount)
     }
 }
 
-extension Money: Equatable {
-    public static func ==(lhs: Money, rhs: Money) -> Bool {
+extension Bill: Equatable {
+    public static func ==(lhs: Bill, rhs: Bill) -> Bool {
         return lhs._amount == rhs._amount
     }
     
 }
 
-extension Money: Hashable {
+extension Bill: Hashable {
     public var hashValue: Int {
         get{
             return _amount.hashValue
@@ -48,10 +48,18 @@ extension Money: Hashable {
     }
 }
 
-extension Money{
+extension Bill: CustomStringConvertible {
+    public var description: String {
+        get {
+            return "\(_currency) \(_amount)"
+        }
+    }
+}
+
+extension Bill{
     
-    func reduced(to: Currency, broker: Broker) throws ->Money{
+    func reduced(to: Currency, broker: Broker) throws ->Bill{
         let rate = try! broker.rate(from: _currency, to: to)
-        return Money(amount: _amount * rate , currency: to)
+        return Bill(amount: _amount * rate , currency: to)
     }
 }
