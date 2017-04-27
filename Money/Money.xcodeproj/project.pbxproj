@@ -17,6 +17,7 @@
 		9CB26F121EB1EE8A006ABE1A /* Broker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB26F111EB1EE8A006ABE1A /* Broker.swift */; };
 		9CB576791EB20CFF00C2F776 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB576781EB20CFF00C2F776 /* Money.swift */; };
 		9CB5767B1EB20D2800C2F776 /* Wad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5767A1EB20D2800C2F776 /* Wad.swift */; };
+		9CB5767D1EB2114300C2F776 /* WadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB5767C1EB2114300C2F776 /* WadTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9CB26F111EB1EE8A006ABE1A /* Broker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Broker.swift; sourceTree = "<group>"; };
 		9CB576781EB20CFF00C2F776 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 		9CB5767A1EB20D2800C2F776 /* Wad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wad.swift; sourceTree = "<group>"; };
+		9CB5767C1EB2114300C2F776 /* WadTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WadTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				9C5595FD1EB10FE600BB946C /* MoneyTests.swift */,
 				9C5595FF1EB10FE600BB946C /* Info.plist */,
+				9CB5767C1EB2114300C2F776 /* WadTests.swift */,
 			);
 			path = MoneyTests;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB5767D1EB2114300C2F776 /* WadTests.swift in Sources */,
 				9C5595FE1EB10FE600BB946C /* MoneyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
