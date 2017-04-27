@@ -79,13 +79,13 @@
 		9C5595E71EB10FE500BB946C /* Money */ = {
 			isa = PBXGroup;
 			children = (
+				9CB26F101EB1E650006ABE1A /* Models */,
 				9C5595E81EB10FE600BB946C /* AppDelegate.swift */,
 				9C5595EA1EB10FE600BB946C /* ViewController.swift */,
 				9C5595EC1EB10FE600BB946C /* Main.storyboard */,
 				9C5595EF1EB10FE600BB946C /* Assets.xcassets */,
 				9C5595F11EB10FE600BB946C /* LaunchScreen.storyboard */,
 				9C5595F41EB10FE600BB946C /* Info.plist */,
-				9CB26F0E1EB1E2FF006ABE1A /* Euro.swift */,
 			);
 			path = Money;
 			sourceTree = "<group>";
@@ -97,6 +97,14 @@
 				9C5595FF1EB10FE600BB946C /* Info.plist */,
 			);
 			path = MoneyTests;
+			sourceTree = "<group>";
+		};
+		9CB26F101EB1E650006ABE1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CB26F0E1EB1E2FF006ABE1A /* Euro.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

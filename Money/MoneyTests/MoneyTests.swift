@@ -12,6 +12,8 @@ import XCTest
 class MoneyTests: XCTestCase {
     
     let five = Euro(amount: 5)
+    let otherFive = Euro(amount: 5)
+    let ten = Euro(amount: 10)
     
     override func setUp() {
         super.setUp()
@@ -31,6 +33,13 @@ class MoneyTests: XCTestCase {
     func testSimpleMultiplication() {
         let ten = five.times(2)
         XCTAssertEqual(ten._amount, 10)
+    }
+    
+    func testEquality() {
+        XCTAssertEqual(otherFive, otherFive)
+        XCTAssertEqual(otherFive, five)
+        
+        XCTAssertNotEqual(five, ten)
     }
     
 }

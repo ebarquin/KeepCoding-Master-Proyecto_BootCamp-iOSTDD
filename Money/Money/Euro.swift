@@ -24,3 +24,18 @@ struct Euro {
         return Euro(amount: _amount * n)
     }
 }
+
+extension Euro: Equatable {
+    public static func ==(lhs: Euro, rhs: Euro) -> Bool {
+        return lhs._amount == rhs._amount
+    }
+    
+}
+
+extension Euro: Hashable {
+    public var hashValue: Int {
+        get{
+            return _amount.hashValue
+        }
+    }
+}
