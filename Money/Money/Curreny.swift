@@ -1,5 +1,5 @@
 //
-//  Euro.swift
+//  Currency.swift
 //  Money
 //
 //  Created by Eugenio Barquín on 27/4/17.
@@ -7,17 +7,21 @@
 //
 
 import Foundation
+typealias Currency = String
 
 struct Money {
     
     let _amount: Int
+    let _currency: Currency
     
-    init(amount: Int) {
+    init(amount: Int, currency: Currency = "EUR") {
         _amount = amount
+        _currency = currency
     }
     
     init() {
         _amount = 0
+        _currency = "EUR"
     }
     
     public func times(_ n:Int) -> Money {
