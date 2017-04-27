@@ -38,3 +38,4 @@ extension Wad : Money{
         return self
     }
 }
+

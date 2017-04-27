@@ -11,7 +11,7 @@ import XCTest
 
 class WadTests: XCTestCase {
     let emptyWad: Wad = Wad()
-    
+    let singleBillWad = Wad(amount: 42, currency: "USD")
     
     override func setUp() {
         super.setUp()
@@ -27,4 +27,8 @@ class WadTests: XCTestCase {
         XCTAssertNotNil(Wad())
     }
     
+    func testStringConversion() {
+        XCTAssertEqual("\(emptyWad)", "Empty")
+        XCTAssertEqual("\(singleBillWad)", "USD 42")
+    }
 }
