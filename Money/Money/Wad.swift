@@ -39,3 +39,8 @@ extension Wad : Money{
     }
 }
 
+extension Wad: Equatable {
+    public static func == (lhs: Wad, rhs: Wad) -> Bool {
+        return true
+    }
+}
