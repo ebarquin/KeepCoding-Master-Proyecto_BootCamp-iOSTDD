@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Euro {
+struct Money {
     
     let _amount: Int
     
@@ -20,23 +20,23 @@ struct Euro {
         _amount = 0
     }
     
-    public func times(_ n:Int) -> Euro {
-        return Euro(amount: _amount * n)
+    public func times(_ n:Int) -> Money {
+        return Money(amount: _amount * n)
     }
     
-    public func plus(_ added: Euro) -> Euro {
-        return Euro(amount: _amount + added._amount)
+    public func plus(_ added: Money) -> Money {
+        return Money(amount: _amount + added._amount)
     }
 }
 
-extension Euro: Equatable {
-    public static func ==(lhs: Euro, rhs: Euro) -> Bool {
+extension Money: Equatable {
+    public static func ==(lhs: Money, rhs: Money) -> Bool {
         return lhs._amount == rhs._amount
     }
     
 }
 
-extension Euro: Hashable {
+extension Money: Hashable {
     public var hashValue: Int {
         get{
             return _amount.hashValue
