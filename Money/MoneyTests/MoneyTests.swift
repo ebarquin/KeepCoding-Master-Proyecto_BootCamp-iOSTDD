@@ -11,9 +11,9 @@ import XCTest
 
 class MoneyTests: XCTestCase {
     
-    let five = Euro(amount: 5)
-    let otherFive = Euro(amount: 5)
-    let ten = Euro(amount: 10)
+    let five = Money(amount: 5)
+    let otherFive = Money(amount: 5)
+    let ten = Money(amount: 10)
     
     override func setUp() {
         super.setUp()
@@ -27,7 +27,7 @@ class MoneyTests: XCTestCase {
     
     func testCanCreateEuro() {
         
-        XCTAssertNotNil(Euro())
+        XCTAssertNotNil(Currency())
     }
     
     func testSimpleMultiplication() {
