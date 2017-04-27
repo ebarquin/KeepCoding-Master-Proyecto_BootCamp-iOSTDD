@@ -23,6 +23,10 @@ struct Euro {
     public func times(_ n:Int) -> Euro {
         return Euro(amount: _amount * n)
     }
+    
+    public func plus(_ added: Euro) -> Euro {
+        return Euro(amount: _amount + added._amount)
+    }
 }
 
 extension Euro: Equatable {

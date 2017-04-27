@@ -47,4 +47,8 @@ class MoneyTests: XCTestCase {
         XCTAssertNotEqual(five.hashValue, ten.hashValue)
     }
     
+    func testSimpeAddition(){
+        XCTAssertEqual(ten, five.plus(otherFive))
+    }
+    
 }
