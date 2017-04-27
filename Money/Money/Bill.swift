@@ -58,7 +58,7 @@ extension Bill: CustomStringConvertible {
 
 extension Bill{
     
-    func reduced(to: Currency, broker: Broker) throws ->Bill{
+    func reduced(to: Currency, broker: Rater) throws -> Bill{
         let rate = try! broker.rate(from: _currency, to: to)
         return Bill(amount: _amount * rate , currency: to)
     }

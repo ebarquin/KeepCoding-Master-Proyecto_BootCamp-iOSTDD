@@ -31,4 +31,19 @@ class WadTests: XCTestCase {
         XCTAssertEqual("\(emptyWad)", "Empty")
         XCTAssertEqual("\(singleBillWad)", "USD 42")
     }
+
+    func testEquality(){
+        
+        // identity
+        XCTAssertEqual(emptyWad, emptyWad)
+        XCTAssertEqual(singleBillWad, singleBillWad)
+        
+        XCTAssertNotEqual(emptyWad, singleBillWad)
+        
+        // equivalence
+        
+        
+    }
+    
+
 }

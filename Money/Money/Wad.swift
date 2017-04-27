@@ -34,13 +34,26 @@ extension Wad : Money{
         return self
     }
     
-    func reduced(to: Currency, broker: Broker) throws -> Wad{
-        return self
+    func reduced(to: Currency, broker: Rater) throws -> Bill{
+        var tally = Bill(amount: 0, currency: to)
+        for each in _bills {
+            tally = try tally.reduced(to: to, broker: broker).plus(try each.reduced(to: to, broker: broker))
+        }
+        
+        return tally
     }
 }
 
 extension Wad: Equatable {
     public static func == (lhs: Wad, rhs: Wad) -> Bool {
-        return true
+        
+        //convertimos todo a USD y se comprar con los valores finales
+        let broker = UnityBroker()
+        
+        let leftBill = try! lhs.reduced(to: "USD", broker: broker)
+        let rightBil = try! rhs.reduced(to: "USD", broker: broker)
+        
+        return leftBill == rightBil
+        
     }
 }

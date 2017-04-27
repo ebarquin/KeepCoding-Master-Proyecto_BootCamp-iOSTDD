@@ -10,11 +10,12 @@ import Foundation
 
 protocol Money {
     
+    init(amount: Int, currency: Currency)
     
     func times(_ n:Int)-> Self
     
     func plus(_ addend: Self)-> Self
     
-    func reduced(to: Currency, broker: Broker) throws -> Self
+    func reduced(to: Currency, broker: Rater) throws -> Bill
     
 }

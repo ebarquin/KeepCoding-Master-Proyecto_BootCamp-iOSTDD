@@ -7,15 +7,31 @@
 //
 
 import Foundation
-
+// Errors
 enum BrokerErrors : Error{
     case unknownRate
 }
 
+//TypeAliases
 typealias RatesDictionary = [String:Rate]
 typealias Rate = Int    // en el futuro, lo cambiaré a Double
 
-struct Broker {
+//Protocols
+protocol Rater{
+    func rate(from: Currency, to: Currency) throws -> Rate
+}
+
+//Default implementations
+extension Rater{
+    func rate(from: Currency, to: Currency) throws -> Rate {
+        return 1
+    }
+}
+
+//Types
+struct UnityBroker : Rater {}
+
+struct Broker: Rater {
     
     var _rates = RatesDictionary()
     
